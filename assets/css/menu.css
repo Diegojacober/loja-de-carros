@@ -1,0 +1,36 @@
+@import url(./configs.css);
+
+
+nav, .dropdown-menu{
+    background-color: var(--dark);
+}
+
+.navbar-nav .nav-item .nav-link, .navbar-nav .nav-item .nav-link i, .dropdown-item{
+    font-size: 0.8rem;
+    color: var(--orange);
+    transition: all ease-in 0.5s;
+}
+
+a{
+    font-size: 0.8rem;
+}
+
+.navbar div button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--orange);
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    
+}
+
+#logo{
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    border: none;
+    background-color: #ddd;
+}
+
