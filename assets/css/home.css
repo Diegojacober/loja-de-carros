@@ -26,6 +26,87 @@
     font-weight: 400;
 }
 
+#destaques{
+    width: 90%;
+    height: 250px;
+    padding: 15px;
+}
+
+#destaques h2{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.produtos{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.produto{
+   
+    width: 300px;
+    padding: 10px 15px;
+    background-color: var(--dark);
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--orange);
+}
+
+.head--produto{
+    border-radius: 22px 22px 0px 0px;
+    width: 280px;
+    height: 150px;
+    background-color: #eeee;
+}
+
+.img--produto{
+
+}
+
+.footer-produto{
+    width: 100%;
+}
+
+.nome--ano{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nome--ano p,.nome--ano span{
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.valor--produto span{
+    font-size: 1rem;
+}
+
+.icones{
+    margin-top: 10px;
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+}
+
+.icones span{
+    display: flex;
+    align-items: end;
+    font-size: 0.5rem;
+    color: #CCCCCC;
+}
+
+.icones span img{
+    width: 18px;
+}
+
+.icones span img{
+    margin-right: 5px;
+}
 
 @media only screen and (max-width: 450px) {
     #entrada h1{
