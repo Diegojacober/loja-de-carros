@@ -157,11 +157,127 @@
             </div>
             
         </article>
-            <!-- <button class="js-carousel--destaques-prev"><</button>
-            <button class="js-carousel--destaques-next">></button> -->
     </section>
     
+    <section id="marcas"> 
+        <h2>Nossas marcas</h2>
+        <article class="c-carousel">
+            <div class="c-carousel__slides js-carousel--marcas">
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p>BMW</p>
+                        </div>
+                        <img src="./assets/imgs/bmw.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p>audi</p>
+                        </div>
+                        <img src="./assets/imgs/audi.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p>ferrari</p>
+                        </div>
+                        <img src="./assets/imgs/ferrari.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p style="font-size: 0.45rem;">Lamborghini</p>
+                        </div>
+                        <img src="./assets/imgs/Lamborghini.svg" width="90" height="90" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p >jeep</p>
+                        </div>
+                        <img src="./assets/imgs/jeep.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p >Land rover</p>
+                        </div>
+                        <img src="./assets/imgs/land-rover.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p >mercedes</p>
+                        </div>
+                        <img src="./assets/imgs/mercedes.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                <div class="c-carousel__slide">
+                    <div class="marca-card">
+                        <div class="marca-info">
+                            <p >porsche</p>
+                        </div>
+                        <img src="./assets/imgs/porsche.svg" class="img-marca" alt="">
+                    </div>
+                </div>
+                    
+            </div>
+            
+        </article>
+    </section>
+
+    <section id="breve">
+        <h2>EM BREVE</h2>
+       
+       <article class="c-carousel">
+        <div class="c-carousel__slides js-carousel--breve">
+            <div class="c-carousel__slide">
+                <div class="produto-breve">
+                    <div class="breve-header">
+                        <img src="" alt="">
+                    </div>
+                    <div class="breve-footer">
+                        <p>BMW Z8</p>
+                    </div>
+                </div>
+            </div>
+            <div class="c-carousel__slide">
+                <div class="produto-breve">
+                    <div class="breve-header">
+                        <img src="" alt="">
+                    </div>
+                    <div class="breve-footer">
+                        <p>camaro zls</p>
+                    </div>
+                </div>
+            </div>
+            <div class="c-carousel__slide">
+                <div class="produto-breve">
+                    <div class="breve-header">
+                        <img src="" alt="">
+                    </div>
+                    <div class="breve-footer">
+                        <p>mustang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </article>
+    </section>
+
       
+
+    <footer>
+        &copy; copyright 2023 - todos os direitos reservados 
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -172,9 +288,11 @@
     <script src="./assets/js/app.js"></script>
    
     <script>
-        const $simpleCarousel = document.querySelector('.js-carousel--destaques')
+        const $CarouselDestaques = document.querySelector('.js-carousel--destaques')
+        const $CarouselMarcas = document.querySelector('.js-carousel--marcas')
+        const $CarouselBreve = document.querySelector('.js-carousel--breve')
 
-        new Glider($simpleCarousel, {
+        new Glider($CarouselDestaques, {
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: ".js-carousel--destaques-dots",
@@ -206,6 +324,70 @@
             }]
         })
 
+        new Glider($CarouselMarcas, {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: ".js-carousel--marcas-dots",
+            draggable: true,
+            arrows: {
+                prev: ".js-carousel--marcas-prev",
+                next: ".js-carousel--marcas-next",
+            },
+            //scrollLock: true,
+            responsive: [{
+                breakpoint: 675,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                } 
+            },
+            {
+                breakpoint: 1410,
+                settings: {
+                    slidesToShow: 8,
+                    slidesToScroll: 8,
+                } 
+            }]
+        })
+
+        //js-carousel--breve
+        new Glider($CarouselBreve, {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: ".js-carousel--breve-dots",
+            draggable: true,
+            arrows: {
+                prev: ".js-carousel--breve-prev",
+                next: ".js-carousel--breve-next",
+            },
+            //scrollLock: true,
+            responsive: [{
+                breakpoint: 675,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                } 
+            },
+            {
+                breakpoint: 1410,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                } 
+            }]
+        })
     </script>
 </body>
 </html>
