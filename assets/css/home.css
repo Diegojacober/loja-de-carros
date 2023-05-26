@@ -4,7 +4,7 @@
 #entrada{
     margin-top: 70px;
     width: 100%;
-    height: 50vh;
+    height: 55vh;
     background-color: #0f0e0f;
     color: #ddd;
     display: flex;
@@ -27,23 +27,38 @@
 }
 
 #destaques{
-    width: 90%;
-    height: 250px;
+    /* height: 250px; */
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #destaques h2{
     text-transform: uppercase;
     font-size: 1.2rem;
+    padding-left: 02%;
+    font-weight: bold;
 }
 
-.produtos{
-    display: flex;
+.c-carousel{
+    margin-bottom: 20px;
+    max-width: 100%;
+    border: none;
+}
+
+.c-carousel__slides{
+    /* border: 1px solid #a89cc8; */
+}
+
+.c-carousel__slide{
     align-items: center;
-    gap: 30px;
-    width: 100%;
+    color: #a89cc8;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+    font-size: 60px;
 }
-
 .produto{
    
     width: 300px;
@@ -111,12 +126,12 @@
 @media only screen and (max-width: 450px) {
     #entrada h1{
         text-transform: uppercase;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: bold;
     }
     
     #entrada p{
-        font-size: 0.5rem;
+        font-size: 0.65rem;
         width: 80%;
         text-align: center;
     }
