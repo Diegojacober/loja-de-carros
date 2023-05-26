@@ -1,0 +1,5 @@
+--> json que esta todos os produtos indicando nome, marca, valor, categoria
+
+--> json de um carrinho vazio, com valor total e itens
+
+-->
