@@ -28,14 +28,36 @@
             padding: 50px 0;
             font-size: 60px;
         }
+
+        .c-carousel__thumbs{
+            display: flex;
+            gap: 10px;
+        }
+
+        .c-carousel__thumb{
+            background-position: center top;
+            background-repeat: no-repeat;
+            border: 0;
+            background-size: cover;
+            cursor: pointer;
+            display: flex;
+            
+            padding: 10px;
+            height: 250px;
+            width: 250px;
+        }
+
+        .c-carousel__thumb:hover{
+            transform: scale(1.1);
+        }
     </style>
 
-    <h1>Carousel simples:</h1>
+    <h1>Carousel simples e responsivo:</h1>
 
 
     <article class="c-carousel">
         <div class="c-carousel__slides js-carousel--simple">
-            <div class="c-carousel__slide">1</div>
+            <div class="c-carousel__slide">img</div>
             <div class="c-carousel__slide">2</div>
             <div class="c-carousel__slide">3</div>
             <div class="c-carousel__slide">4</div>
@@ -44,10 +66,36 @@
         <button class="js-carousel--simple-next">></button>
     </article>
 
+    <article class="c-carousel c-carousel--thumbs">
+        <div class="c-carousel__slides js-carousel--thumbs">
+            <div class="c-carousel__slide"><img src="./assets/imgs/bmw.svg" alt=""></div>
+            <div class="c-carousel__slide"><img src="./assets/imgs/land-rover.svg" alt=""></div>
+            <div class="c-carousel__slide"><img src="./assets/imgs/mercedes.svg" alt=""></div>
+            <div class="c-carousel__slide"><img src="./assets/imgs/audi.svg" alt=""></div>
+        </div>
+
+        <div class="c-carousel__thumbs">
+            <button class="c-carousel__thumb" data-carousel-index="0" 
+            style="background-image: url('./assets/imgs/bmw.svg');"></button>
+
+            <button class="c-carousel__thumb" data-carousel-index="1" 
+            style="background-image: url('./assets/imgs/land-rover.svg');"></button>
+
+            <button class="c-carousel__thumb" data-carousel-index="2" 
+            style="background-image: url('./assets/imgs/mercedes.svg');"></button>
+
+            <button class="c-carousel__thumb" data-carousel-index="3" 
+            style="background-image: url('./assets/imgs/audi.svg');"></button>
+        </div>
+
+
+    </article>
 
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <script>
         const $simpleCarousel = document.querySelector('.js-carousel--simple')
+        const $thumbCarousel = document.querySelector('.js-carousel--thumbs')
+        const $thumbs = document.querySelectorAll("[data-carousel-index]")
 
         new Glider($simpleCarousel, {
             slidesToShow: 1,
@@ -72,6 +120,21 @@
                     slidesToScroll: 3,
                 } 
             }]
+        })
+
+        const thumbsGlider = new Glider($thumbCarousel,{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: true,
+            scrollLock: true,
+        })
+
+        $thumbs.forEach(btn => {
+            btn.addEventListener('click', e => {
+                const index = e.target.getAttribute('data-carousel-index')
+
+                thumbsGlider.scrollItem(index, true)
+            })
         })
 
     </script>

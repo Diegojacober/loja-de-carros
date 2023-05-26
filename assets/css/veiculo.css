@@ -1,0 +1,172 @@
+#info--carro{
+    margin-top: calc(100px + 10px);
+    width: 100%;
+    display: flex;
+    min-height: calc(100vh - 270px);
+    padding: 10px;
+    gap: 90px;
+
+}
+
+#carrousel--veiculo{
+    width: 60%;
+    flex: 2;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--dark);
+}
+
+.img-thumb{
+    width: 55%;
+    height: 55%;
+    margin-bottom: 20px;
+    
+}
+
+.c-carousel__thumbs{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    border-top: 1px solid var(--dark);
+    padding-top: 10px;
+}
+
+.c-carousel__thumb{
+    background-position: center top;
+    background-repeat: no-repeat;
+    border: 0;
+    background-size: cover;
+    cursor: pointer;
+    display: flex;
+    
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+}
+
+.c-carousel__thumb:hover{
+   filter: brightness(30%);
+}
+
+#info--carros{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info--header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info--header img{
+    width:100%;
+    height: 120px;
+    background-color: #141313d8;
+    padding: 10px;
+}
+
+.valor--carro{
+    font-weight: bold;
+    color: var(--orange);
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.title--car{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.name-car{
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.description-car{
+    color: var(--orange);
+    font-size: 0.45rem;
+}
+
+.icons{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 45px;
+}
+
+.car-cambio{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.car-cambio img{
+    width: 20px;
+    height: 20px;
+}
+
+.car--year, .car-cambio{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.car-cambio span{
+    font-size: 14px;
+}
+
+.category--car{
+    display: flex;
+    gap: 5px;
+    margin-top: 12px;
+    justify-content: start;
+    align-items: center;
+}
+
+.category--car img{
+    width: 20px;
+    height: 20px;
+}
+
+.category--car span{
+    font-size: 16px;
+}
+
+.button-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--orange);
+    gap: 10px;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 20px;
+    background-color: var(--dark);
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+@media only screen and (max-width: 465px) {
+    #info--carro{
+        display: block;
+    }
+
+    #carrousel--veiculo{
+        width: 100%;
+     }
+
+     .c-carousel__thumb{
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+    }
+  }

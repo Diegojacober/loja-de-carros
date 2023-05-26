@@ -26,7 +26,7 @@
     font-weight: 400;
 }
 
-#destaques, #marcas, #breve{
+#destaques, #marcas, #breve, #off-road, #blindados, #esportivos, #bmw, #ferrari, #lamborghini, #mercedes, #jeep, #land-rover, #porsche, #audi {
     /* height: 250px; */
     padding: 15px;
     display: flex;
@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-#destaques h2, #marcas h2, #breve h2{
+#destaques h2, #marcas h2, #breve h2, #off-road h2, #blindados h2, #esportivos h2, #bmw h2, #ferrari h2, #lamborghini h2, #mercedes h2, #jeep h2, #land-rover h2, #porsche h2, #audi h2{
     text-transform: uppercase;
     font-size: 1.2rem;
     padding-left: 02%;
@@ -213,7 +213,13 @@
     text-transform: uppercase;
 }
 
+.logo--marca{
+    width: 10rem;
+    margin-bottom: 25px;
+}
+
 footer{
+    margin-top: 80px; 
     width: 100%;
     height: 70px;
     padding: 15px;
@@ -224,6 +230,7 @@ footer{
     background: var(--dark);
     text-transform: uppercase;
     font-size: 0.6rem;
+    
 }
 
 @media only screen and (max-width: 465px) {
@@ -238,18 +245,8 @@ footer{
         width: 80%;
         text-align: center;
     }
-  }
 
-  @media only screen and (max-width: 464px) {
-    #entrada h1{
-        text-transform: uppercase;
-        font-size: 0.68rem;
-        font-weight: bold;
-    }
-    
-    #entrada p{
-        font-size: 0.54rem;
-        width: 80%;
-        text-align: center;
+    #destaques h2, #marcas h2, #breve h2{
+        font-size: 0.8rem;
     }
   }
