@@ -1,5 +1,6 @@
 let produtos = [
     {
+        id: 1,
         nome: "DIEGO X6",
         marca: "BMW",
         categoria: "esportivo",
@@ -11,6 +12,7 @@ let produtos = [
         url_imagem: "./assets/imgs/bmw.svg"
     },
     {
+        id: 2,
         nome: "BMW X1",
         marca: "BMW",
         categoria: "esportivo",
