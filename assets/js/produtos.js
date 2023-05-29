@@ -1,7 +1,7 @@
 let produtos = [
     {
         id: 1,
-        nome: "DIEGO X6",
+        nome: "BRUNO X6",
         marca: "BMW",
         categoria: "esportivo",
         valor: 229000.00,

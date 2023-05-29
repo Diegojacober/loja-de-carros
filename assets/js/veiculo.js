@@ -7,5 +7,6 @@ $(document).ready(function () {
         paramArray[param[0]] = param[1];
     }
 
-    //enviar id para rota da api para pegar um carro especifico    
+    //enviar id para rota da api para pegar um carro especifico
+     
 })

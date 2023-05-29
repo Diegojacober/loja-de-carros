@@ -37,14 +37,13 @@ produtos.forEach(produto => {
           `<span>${produto.valor}</span>`+
       `</div>`+
       `<div class="icones">`+
-          `<span><img src="./assets/imgs/icongas.svg" alt="" srcset=""> Gasolina</span>`+
-          `<span><img src="./assets/imgs/iconcambio.svg" alt="" srcset=""> Automático</span>`+
+          `<span><img src="./assets/imgs/icongas.svg" alt="" srcset=""> ${produto.combustivel}</span>`+
+          `<span><img src="./assets/imgs/iconcambio.svg" alt="" srcset=""> ${produto.cambio}</span>`+
       `</div>`+
   `</div>`+
   `</div>`+
   `</div>`
   
   document.getElementById('carros-destaques').innerHTML += div
-
 
 });
