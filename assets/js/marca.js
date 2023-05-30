@@ -59,6 +59,9 @@ function getCars() {
         success:  data => {
 
             $('#logo-marca-selecionada').attr('src',`../assets/imgs/${data.nome}.svg`)
+            if (data.nome == 'Land Rover') {
+                $('#logo-marca-selecionada').attr('src',`../assets/imgs/land-rover.svg`)
+            }
             $('#logo-marca-selecionada').attr('alt',`Logo da marca: ${data.nome}`)
 
             
