@@ -27,13 +27,16 @@
         success: car => {
             
             var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-
+          
             $('#valor').html(valor)
             $('#name').html(car.name)
             $('#description').html(car.description)
             $('#ano').html(`<i class="fa-solid fa-calendar-days orange"></i>  ${car.ano}`)
             $('#cambio').html(car.cambio)
-            $('#categoria').html(car.categoria_id)
+            $('#categoria').html(car.categoria)
+            $('#logo-marca').attr('src',`../assets/imgs/${car.marca}.svg`)
+            $('#btn-car').css('background-image', 'url("' + car.url_image + '")');
+            $('#foto1-car').attr('src',`${car.url_image}`)
         },
         error: e => {
             if (e.status == 404) {

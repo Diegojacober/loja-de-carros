@@ -10,6 +10,18 @@ $(document).ready(function () {
   
 });
 
+function abrirProduto(idProduto) {
+  window.open(`../../views/veiculo.html?id=${idProduto}`, '_blank');
+}
+
+function abrirCategoria(idCategoria) {
+  window.open(`../../views/categoria.html?id=${idCategoria}`, '_blank');
+}
+
+function abrirMarca(idMarca) {
+  window.open(`../../views/marca.html?id=${idMarca}`, '_blank');
+}
+
 //=============================================================
 let carrinho = {
   itens: [],

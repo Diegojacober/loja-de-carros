@@ -1,9 +1,4 @@
-function abrirProduto(idProduto) {
-    window.open(`../../views/veiculo.html?id=${idProduto}`, '_blank');
-  }
-  
-  
-  produtos.forEach(produto => {
+produtos.forEach(produto => {
     div = `<div class="c-carousel__slide">`+
     `<div class="produto" data-id-carro="${produto.id}" onclick="abrirProduto(${produto.id})">`+
     `<div class="head--produto">`+
@@ -26,5 +21,4 @@ function abrirProduto(idProduto) {
     `</div>`
     
     document.getElementById('carros-destaques').innerHTML += div
-  
-  });
+});
