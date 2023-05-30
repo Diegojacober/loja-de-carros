@@ -57,10 +57,11 @@ function getCars() {
     
         dataType: 'json',
         success:  data => {
-
+            changeFavicon(`../assets/imgs/${data.nome}.svg`);
             $('#logo-marca-selecionada').attr('src',`../assets/imgs/${data.nome}.svg`)
             if (data.nome == 'Land Rover') {
                 $('#logo-marca-selecionada').attr('src',`../assets/imgs/land-rover.svg`)
+                changeFavicon(`../assets/imgs/land-rover.svg`);
             }
             $('#logo-marca-selecionada').attr('alt',`Logo da marca: ${data.nome}`)
 

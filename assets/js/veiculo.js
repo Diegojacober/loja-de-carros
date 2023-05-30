@@ -25,7 +25,7 @@
 
         dataType: 'json',
         success: car => {
-            
+            document.title = `${car.name}`;
             var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
           
             $('#valor').html(valor)
@@ -35,6 +35,13 @@
             $('#cambio').html(car.cambio)
             $('#categoria').html(car.categoria)
             $('#logo-marca').attr('src',`../assets/imgs/${car.marca}.svg`)
+
+            changeFavicon(`../assets/imgs/${car.marca}.svg`);
+            if (car.marca_id == 4) {
+                $('#logo-marca').attr('src',`../assets/imgs/land-rover.svg`)
+                changeFavicon(`../assets/imgs/land-rover.svg`);
+            }
+            
             $('#btn-car').css('background-image', 'url("' + car.url_image + '")');
             $('#foto1-car').attr('src',`${car.url_image}`)
         },
