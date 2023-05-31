@@ -46,18 +46,12 @@ function abrirCarrinho(){
   });
 }
 //=============================================================
-let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [] 
 
-
-function removeFromCart(index) {
-  cart = cart.splice(index, 1);
-  localStorage.setItem('cart', JSON.stringify(cart))
+function showCart(cartP = cart) {
+  
   $('#lista-produtos').empty()
-  showCart()
-}
-
-function showCart() {
-  cart.map(item => {
+  cartP.map(item => {
     let div = `<div class="product-card">`+
     `<div class="image-product">`+
       `<img src="${item.url_image}" alt="">`+
@@ -77,3 +71,21 @@ function showCart() {
   $('#lista-produtos').append(div)
   })
 }
+
+
+function removeFromCart(index) {
+  
+  cart.forEach(element => {
+    if (element.identifier == index) {
+      let cartC = cart.filter((e) => e.identifier != index) ? cart.filter((e) => e.identifier != index) : [] 
+      
+      localStorage.setItem('cart', JSON.stringify(cartC))
+      
+      showCart(cartC)
+    }
+  });
+
+  cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [] 
+  
+}
+
