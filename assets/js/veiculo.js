@@ -11,7 +11,7 @@
     var id = paramArray.id
 
 
-    const url=`http://127.0.0.1:8000/api/v1/car/${id}`
+    const url=`https://carros.azurewebsites.net/api/v1/car/${id}`
     const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
 
 
