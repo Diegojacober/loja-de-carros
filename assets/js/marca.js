@@ -45,7 +45,7 @@ if (id == 1) {
         
 function getCars() {
     const url=`http://127.0.0.1:8000/api/v1/marca/${id}`
-    const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NDEyMDI1LCJpYXQiOjE2ODUzODgwMjUsInN1YiI6IjEifQ.NKRxhfDZaFJ_MjdCPaVVDqFiEtAd1Q3c3vveQSAQYnU'
+    const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
     
     $.ajax({
         type: 'GET',
@@ -57,6 +57,7 @@ function getCars() {
     
         dataType: 'json',
         success:  data => {
+            document.title = `Carros da ${data.nome}`;
             changeFavicon(`../assets/imgs/${data.nome}.svg`);
             $('#logo-marca-selecionada').attr('src',`../assets/imgs/${data.nome}.svg`)
             if (data.nome == 'Land Rover') {

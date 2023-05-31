@@ -11,15 +11,15 @@ $(document).ready(function () {
 });
 
 function abrirProduto(idProduto) {
-  window.open(`../../views/veiculo.html?id=${idProduto}`, '_blank');
+  window.open(`../../views/veiculo.html?id=${idProduto}`, '_self');
 }
 
 function abrirCategoria(idCategoria) {
-  window.open(`../../views/categoria.html?id=${idCategoria}`, '_blank');
+  window.open(`../../views/categoria.html?id=${idCategoria}`, '_self');
 }
 
 function abrirMarca(idMarca) {
-  window.open(`../../views/marca.html?id=${idMarca}`, '_blank');
+  window.open(`../../views/marca.html?id=${idMarca}`, '_self');
 }
 
 document.head = document.head || document.getElementsByTagName('head')[0];
@@ -36,10 +36,44 @@ function changeFavicon(src) {
  document.head.appendChild(link);
 } 
 
-//=============================================================
-let carrinho = {
-  itens: [],
 
-  valorTotal:0
+function abrirCarrinho(){
+  $.get("../../views/components/Cart/index.html", function (data) {
+    $("body").append(data);
+    $('#modalCart').modal('show')
+
+    showCart()
+  });
+}
+//=============================================================
+let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+
+
+function removeFromCart(index) {
+  cart = cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart))
+  $('#lista-produtos').empty()
+  showCart()
 }
 
+function showCart() {
+  cart.map(item => {
+    let div = `<div class="product-card">`+
+    `<div class="image-product">`+
+      `<img src="${item.url_image}" alt="">`+
+    `</div>`+
+    `<div class="product-data">`+
+      `<p class="product-title">${item.name}</p>`+
+      `<span class="product-description">${item.description}</span>`+
+      `<p class="product-value">${item.value}</p>`+
+      
+    `</div>`+
+    `<div class="icons-product">`+
+      `<a href="#" class="remove-product" onclick="removeFromCart(${item.id})"><i class="fa-solid fa-trash-can orange"></i></a>`+
+    `</div>`+
+  `</div>`
+
+  
+  $('#lista-produtos').append(div)
+  })
+}

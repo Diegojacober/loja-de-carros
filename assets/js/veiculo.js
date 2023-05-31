@@ -8,11 +8,11 @@
     }
 
     //enviar id para rota da api para pegar um carro especifico
-    let id = paramArray.id
+    var id = paramArray.id
 
 
     const url=`http://127.0.0.1:8000/api/v1/car/${id}`
-    const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NDEyMDI1LCJpYXQiOjE2ODUzODgwMjUsInN1YiI6IjEifQ.NKRxhfDZaFJ_MjdCPaVVDqFiEtAd1Q3c3vveQSAQYnU'
+    const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
 
 
     $.ajax({
@@ -27,7 +27,7 @@
         success: car => {
             document.title = `${car.name}`;
             var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-          
+
             $('#valor').html(valor)
             $('#name').html(car.name)
             $('#description').html(car.description)
@@ -57,3 +57,40 @@
             }
         }
     })
+
+
+$('#addCart').on('click', (e) => {
+   
+    let identifier = id
+
+    let key = cart.findIndex((item) => {
+        return item.identifier == identifier
+    })
+
+
+
+    if (key == -1) {
+        cart.push({
+        identifier,
+        id: identifier,
+        name:  $('#name').text(),
+        description: $('#description').text(),
+        value: $('#valor').text(),
+        url_image: $('#foto1-car').attr('src')
+        })
+
+        localStorage.setItem('cart', JSON.stringify(cart))
+
+        Swal.fire(
+            'Carro Adicionado',
+            'Carro adicionado ao carrinho com sucesso!',
+            'success'
+          )
+    } else {
+        Swal.fire(
+            'Carro Adicionado',
+            'Este carro já foi adicionado ao seu carrinho',
+            'info'
+          )
+    }
+})
