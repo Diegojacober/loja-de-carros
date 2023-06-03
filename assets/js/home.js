@@ -17,7 +17,7 @@ $.ajax({
             div = `<div class="c-carousel__slide">`+
             `<div class="produto" data-id-carro="${car.id}" onclick="abrirProduto(${car.id})">`+
             `<div class="head--produto">`+
-                `<img src="${car.url_image}" alt="${car.name}" class="img--produto">`+
+                `<img src="${car.url_image}" alt="${car.name.toUpperCase()}" class="img--produto">`+
             `</div>`+
             `<div class="footer-produto">`+
                 `<div class="nome--ano">`+
