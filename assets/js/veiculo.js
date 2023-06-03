@@ -29,8 +29,8 @@
             var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
             $('#valor').html(valor)
-            $('#name').html(car.name)
-            $('#description').html(car.description)
+            $('#name').html(car.name.toUpperCase())
+            $('#description').html(car.description.toUpperCase())
             $('#ano').html(`<i class="fa-solid fa-calendar-days orange"></i>  ${car.ano}`)
             $('#cambio').html(car.cambio)
             $('#categoria').html(car.categoria)
