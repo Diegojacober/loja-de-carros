@@ -57,3 +57,14 @@
 .icons-product{
     padding: 20px;
 }
+
+
+.cart-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+
+#btn-rota{
+    width: 100%;
+}

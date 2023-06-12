@@ -1,0 +1,21 @@
+.form-container{
+    width: 70%;
+    margin:  auto;
+    margin-top: calc(100px + 30px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-title{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+textarea{
+    resize: none;
+}
+
+.footer-contact{
+    position: fixed;
+}
