@@ -1,5 +1,6 @@
 var params = window.location.search.substring(1).split('&');
 var paramArray = {};
+// filtra e pega os parametros da url
 for (var i = 0; i < params.length; i++) {
     var param = params[i].split('=');
     paramArray[param[0]] = param[1];
@@ -25,7 +26,7 @@ function getCars() {
     const url=`https://diegoapi.azurewebsites.net/api/v1/categoria/${id}`
     const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
     
-    
+    // Faz requisição a api e gera elementos na tela
     $.ajax({
         type: 'GET',
         url: url,

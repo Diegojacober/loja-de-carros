@@ -1,5 +1,5 @@
 
-
+// filtra e pega os parametros da url
     var params = window.location.search.substring(1).split('&');
     var paramArray = {};
     for (var i = 0; i < params.length; i++) {
@@ -16,6 +16,7 @@
 
 
     $.ajax({
+        // Consume a api e coloca os dados na tela atraves da geração de elementos dinâmicos
         type: 'GET',
         url: url,
         headers: {
@@ -27,7 +28,7 @@
         success: car => {
             document.title = `${car.name}`;
             var valor = parseFloat(car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-            
+
             $('#valor').html(valor)
             $('#name').html(car.name.toUpperCase())
             $('#description').html(car.description.toUpperCase())
@@ -60,7 +61,7 @@
 
 
 $('#addCart').on('click', (e) => {
-   
+   //adiciona produtos no carrinho
     let identifier = id
 
     let key = cart.findIndex((item) => {

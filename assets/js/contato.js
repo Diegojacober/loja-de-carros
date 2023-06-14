@@ -2,11 +2,13 @@ $('#contato-form').on('submit', (e) => {
     e.preventDefault();
 
     let data = {
+        //Pega os valores digitados no email
         email: $('#inputFormEmail').val(),
         message: $('#message').val()
     }
 
     $.ajax({
+        //Através de uma api envia um email para o dono do site
         type: 'POST',
         url: 'https://formspree.io/f/xlekqego',
         data: data,

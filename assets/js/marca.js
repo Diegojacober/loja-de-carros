@@ -7,7 +7,7 @@ for (var i = 0; i < params.length; i++) {
 
 let id = paramArray.id
 
-
+// Filtra os parametros recebidos na url
 if (id == 1) {
    $('#titulo-marca').html('Ferrari')
    getCars()
@@ -47,6 +47,7 @@ function getCars() {
     const url=`https://diegoapi.azurewebsites.net/api/v1/marca/${id}`
     const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
     
+    // busca dados na api os consume e gera elementos na tela
     $.ajax({
         type: 'GET',
         url: url,
@@ -104,6 +105,8 @@ function getCars() {
                 } 
               });
 
+
+              //Configrações necessárias para os carrousels
               const $CarouselOffRoad = document.querySelector('.js-carousel--off-road')
               const $CarouselEsportivos = document.querySelector('.js-carousel--esportivos')
               const $CarouselBlindados = document.querySelector('.js-carousel--blindados')
