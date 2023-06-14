@@ -22,7 +22,7 @@ if (id == 1) {
     
         
 function getCars() {
-    const url=`https://integrador2023.azurewebsites.net/api/v1/categoria/${id}`
+    const url=`https://diegoapi.azurewebsites.net/api/v1/categoria/${id}`
     const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
     
     
@@ -39,8 +39,8 @@ function getCars() {
     
             data.carsm.forEach(async (car) => {
     
-                var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    
+                var preco = parseFloat(car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                
 
                 div = `<div class="c-carousel__slide">`+
                     `<div class="produto" onclick="abrirProduto(${car.id})">`+
@@ -53,7 +53,7 @@ function getCars() {
                             `<span><i class="fa-solid fa-calendar-days orange"></i> 2023</span>`+
                         ` </div>`+
                         `<div class="valor--produto">`+
-                            `<span>${valor}</span>`+
+                            `<span>${preco}</span>`+
                         `</div>`+
                         `<div class="icones">`+
                             `<span><img src="../assets/imgs/icongas.svg" alt="" srcset=""> ${car.combustivel}</span>`+

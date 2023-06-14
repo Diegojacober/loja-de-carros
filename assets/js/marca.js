@@ -44,7 +44,7 @@ if (id == 1) {
     
         
 function getCars() {
-    const url=`https://integrador2023.azurewebsites.net/api/v1/marca/${id}`
+    const url=`https://diegoapi.azurewebsites.net/api/v1/marca/${id}`
     const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
     
     $.ajax({
@@ -70,7 +70,7 @@ function getCars() {
             data.cars.forEach(async (car) => {
                 
                 
-                var valor = (car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                var valor = parseFloat(car.valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     
 
                 div = `<div class="c-carousel__slide">`+

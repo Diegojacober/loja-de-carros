@@ -1,4 +1,4 @@
-const url = `https://integrador2023.azurewebsites.net/api/v1/car/destaques`
+const url = `https://diegoapi.azurewebsites.net/api/v1/car/destaques`
 const access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiZXhwIjoxNjg4NTEyMDQ5LCJpYXQiOjE2ODU0ODgwNDksInN1YiI6IjEifQ.bVjvEIaZn-ruuq0T8QEdUeZQlDNP0TUYa4IloTZmXn4'
 
 $.ajax({
