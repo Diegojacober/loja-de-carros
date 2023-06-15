@@ -1,3 +1,4 @@
+//Ao o formulário ser enviado faz executa função
 $('#contato-form').on('submit', (e) => {
     e.preventDefault();
 

@@ -152,7 +152,7 @@ $.ajax({
     }
 })
 
-
+//Função utilizada ao clicar em produtos indisponíveis
 $('.produto-breve').on('click', () => {
     Swal.fire(
         'Carro indisponível',

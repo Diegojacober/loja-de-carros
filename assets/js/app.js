@@ -1,3 +1,4 @@
+//Renderiza o footer e o header assim que carregar a página
 $(document).ready(function () {
 
   $.get("../../views/components/Menu/index.html", function (data) {
@@ -10,6 +11,7 @@ $(document).ready(function () {
   
 });
 
+//Funções por abrir páginas
 function abrirProduto(idProduto) {
   window.open(`../../views/veiculo.html?id=${idProduto}`, '_self');
 }
@@ -22,8 +24,8 @@ function abrirMarca(idMarca) {
   window.open(`../../views/marca.html?id=${idMarca}`, '_self');
 }
 
+//Mudar o icone do site
 document.head = document.head || document.getElementsByTagName('head')[0];
-
 function changeFavicon(src) {
  var link = document.createElement('link'),
      oldLink = document.getElementById('dynamic-favicon');
@@ -36,7 +38,7 @@ function changeFavicon(src) {
  document.head.appendChild(link);
 } 
 
-
+//Função responsável por abrir o carrinho
 function abrirCarrinho(){
   $.get("../../views/components/Cart/index.html", function (data) {
     $("body").append(data);
@@ -45,7 +47,9 @@ function abrirCarrinho(){
     showCart()
   });
 }
-//=============================================================
+
+
+//Função responsável por mostrar os produtos do carrinho
 let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [] 
 
 function showCart(cartP = cart) {
@@ -72,7 +76,7 @@ function showCart(cartP = cart) {
   })
 }
 
-
+//Remove itens do carrinho
 function removeFromCart(index) {
   
   cart.forEach(element => {
@@ -89,7 +93,7 @@ function removeFromCart(index) {
   
 }
 
-
+//Pega a posição da pessoa e salva no navegador
 if (navigator.geolocation) {
   // navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
   // var lat = position.coords.latitude;
@@ -111,6 +115,7 @@ if (navigator.geolocation) {
   )
 }
 
+//Abre a rota em uma nova página
 function rota() {
   let rota = localStorage.getItem('@maps')
   window.open(rota, '_blank')
